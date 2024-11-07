@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="707.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bankapp.AdminController">
+   <children>
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="678.0" prefWidth="200.0" style="-fx-background-color: #53B052; -fx-background-radius: 15px;">
+         <children>
+            <ImageView fitHeight="57.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/img.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="25.0" top="26.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button fx:id="nav_create_client" onAction="#onCreateClientChoice" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #F3F6FA; -fx-background-radius: 5px;" text="Create Client">
+               <VBox.margin>
+                  <Insets left="40.0" top="119.0" />
+               </VBox.margin></Button>
+            <Button fx:id="nav_create_account" onAction="#onCreateAccountChoice" prefHeight="38.0" prefWidth="122.0" style="-fx-background-radius: 5px; -fx-background-color: #F3F6FA;" text="Create Account">
+               <VBox.margin>
+                  <Insets left="40.0" top="32.0" />
+               </VBox.margin></Button>
+            <Button fx:id="nav_client_list" onAction="#onClientListChoice" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #F3F6FA; -fx-background-radius: 5px;" text="Clients">
+               <VBox.margin>
+                  <Insets left="40.0" top="32.0" />
+               </VBox.margin></Button>
+            <Button fx:id="nav_deposit" onAction="#onDepositChoice" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #F3F6FA; -fx-background-radius: 5px;" text="Deposit/Withdraw">
+               <VBox.margin>
+                  <Insets left="40.0" top="32.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#Logout" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: #0f6124;" text="Logout" textFill="#efeeee">
+               <VBox.margin>
+                  <Insets left="40.0" top="180.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="create_client" layoutX="236.0" layoutY="6.0" prefHeight="694.0" prefWidth="724.0" style="-fx-background-color: #f5f3ed;">
+         <children>
+            <Label layoutX="14.0" layoutY="43.0" text="Create Client">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="136.0" text="First Name" />
+            <Label layoutX="248.0" layoutY="136.0" text="Last Name" />
+            <Label layoutX="450.0" layoutY="136.0" text="Phone Number" />
+            <Label layoutX="30.0" layoutY="266.0" text="Username" />
+            <Label layoutX="248.0" layoutY="266.0" text="Password" />
+            <Label layoutX="450.0" layoutY="266.0" text="DOB" />
+            <TextField fx:id="client1_fn" layoutX="30.0" layoutY="174.0" />
+            <TextField fx:id="client1_ln" layoutX="248.0" layoutY="174.0" />
+            <TextField fx:id="client1_phone_nb" layoutX="450.0" layoutY="174.0" />
+            <TextField fx:id="client1_username" layoutX="30.0" layoutY="328.0" />
+            <TextField fx:id="client1_password" layoutX="248.0" layoutY="328.0" />
+            <Label fx:id="client1_error_message" layoutX="32.0" layoutY="491.0" prefHeight="38.0" prefWidth="279.0" />
+            <Button fx:id="btn_create_client" layoutX="180.0" layoutY="578.0" mnemonicParsing="false" onAction="#onCreateClientClick" prefHeight="38.0" prefWidth="337.0" style="-fx-background-color: #53B052; -fx-background-radius: 10px;" text="Create Client" textFill="#faf7f7">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <CheckBox fx:id="client1_generate_username" layoutX="31.0" layoutY="294.0" mnemonicParsing="false" onAction="#generateUsername" text="generate">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="client1_generate_password" layoutX="248.0" layoutY="294.0" mnemonicParsing="false" onAction="#generatePassword" text="generate">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </CheckBox>
+            <DatePicker fx:id="client1_dob" layoutX="438.0" layoutY="324.0" />
+            <Label layoutX="32.0" layoutY="407.0" text="City" />
+            <TextField fx:id="client1_city" layoutX="31.0" layoutY="447.0" />
+            <Label layoutX="248.0" layoutY="407.0" text="Country" />
+            <TextField fx:id="client1_country" layoutX="249.0" layoutY="447.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="create_account_pane" layoutX="236.0" layoutY="20.0" prefHeight="666.0" prefWidth="715.0" visible="false">
+         <children>
+            <Label layoutX="17.0" layoutY="31.0" text="Create Account">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="253.0" text="Client Account Number" />
+            <ChoiceBox fx:id="admin2_account_choicebox" layoutX="23.0" layoutY="157.0" prefWidth="150.0" />
+            <TextField fx:id="admin2_acc_nb" layoutX="24.0" layoutY="283.0" />
+            <Label layoutX="24.0" layoutY="126.0" text="Account Type" />
+            <Label layoutX="309.0" layoutY="126.0" text="Branch" />
+            <TextField fx:id="admin2_deposit_nb" layoutX="309.0" layoutY="283.0" promptText="0" />
+            <Label layoutX="309.0" layoutY="253.0" text="Deposit Amount $" />
+            <ChoiceBox fx:id="admin2_branch_choicebox" layoutX="308.0" layoutY="157.0" prefWidth="150.0" />
+            <Button layoutX="549.0" layoutY="345.0" mnemonicParsing="false" onAction="#onCreateAccountClick" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: #53B052; -fx-background-radius: 7px;" text="Create Account" textFill="#f7f3f3" />
+            <TextField fx:id="admin2_acc_nb2" layoutX="24.0" layoutY="333.0" visible="false" />
+            <TextField fx:id="admin2_acc_nb3" layoutX="25.0" layoutY="384.0" visible="false" />
+            <Button layoutX="178.0" layoutY="283.0" mnemonicParsing="false" onAction="#onAddClientClick" text="+" />
+            <Label fx:id="admin2_error_msg" layoutX="20.0" layoutY="362.0" prefHeight="18.0" prefWidth="321.0" />
+            <Label fx:id="admin2_msg_err" layoutX="209.0" layoutY="543.0" prefHeight="18.0" prefWidth="279.0" />
+            <Label layoutX="531.0" layoutY="126.0" text="Account Name" />
+            <TextField fx:id="client2_account_name" layoutX="521.0" layoutY="157.0" />
+            <Label layoutX="25.0" layoutY="433.0" text="Add Debit Card/Update Card Exp Date">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="491.0" text="Account Number" />
+            <TextField fx:id="client3_acc_nb2" layoutX="23.0" layoutY="526.0" />
+            <Button layoutX="25.0" layoutY="585.0" mnemonicParsing="false" onAction="#createCard" style="-fx-background-color: #53B052;" text="Create" textFill="#f2f1f1" />
+            <Label fx:id="client3_error2" layoutX="23.0" layoutY="625.0" prefHeight="18.0" prefWidth="346.0" />
+            <Button layoutX="103.0" layoutY="585.0" mnemonicParsing="false" onAction="#updateCard" style="-fx-background-color: #53B052;" text="Update" textFill="#f2f1f1" />
+            <Label fx:id="client3_error3" layoutX="304.0" layoutY="625.0" prefHeight="18.0" prefWidth="158.0" />
+            <Label layoutX="229.0" layoutY="491.0" text="Card Holder" />
+            <TextField fx:id="client2_card_holder" layoutX="219.0" layoutY="526.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="clients_list_pane" layoutX="228.0" layoutY="14.0" prefHeight="686.0" prefWidth="740.0" visible="false">
+         <children>
+            <Label layoutX="14.0" layoutY="28.0" prefHeight="27.0" prefWidth="81.0" text="Clients">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="8.0" layoutY="550.0" text="Search For Client">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="search_txt" layoutX="139.0" layoutY="547.0" promptText="Username" />
+            <TableView fx:id="tableview" layoutX="7.0" layoutY="63.0" prefHeight="458.0" prefWidth="732.0">
+
+            </TableView>
+            <Button layoutX="301.0" layoutY="547.0" mnemonicParsing="false" onAction="#onSearchClick" style="-fx-background-color: #0f6124;" text="search" textFill="#faf7f7" />
+            <Label fx:id="search_lbl" layoutX="14.0" layoutY="629.0" prefHeight="18.0" prefWidth="200.0" text="Label" visible="false" />
+            <ScrollPane fx:id="client_scrollpane" layoutX="-4.0" layoutY="582.0" prefHeight="100.0" prefWidth="740.0">
+               <content>
+                  <VBox fx:id="search_vbox" prefHeight="102.0" prefWidth="740.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="deposit_pane" layoutX="227.0" layoutY="17.0" prefHeight="666.0" prefWidth="740.0" visible="false">
+         <children>
+            <Label layoutX="23.0" layoutY="36.0" prefHeight="35.0" prefWidth="183.0" text="Deposit Money">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" layoutY="111.0" text="Account Number:" />
+            <Label layoutX="454.0" layoutY="111.0" text="Amount($):" />
+            <TextField fx:id="admin4_acc_nb" layoutX="70.0" layoutY="147.0" />
+            <TextField fx:id="admin4_amount" layoutX="454.0" layoutY="147.0" />
+            <Label fx:id="admin4_err_msg" layoutX="14.0" layoutY="304.0" prefHeight="18.0" prefWidth="604.0" />
+            <Button layoutX="210.0" layoutY="252.0" mnemonicParsing="false" onAction="#onDepositClick" prefHeight="26.0" prefWidth="263.0" style="-fx-background-color: #53B052;" text="Deposit" textFill="#f4f1f1" />
+            <Label layoutX="22.0" layoutY="361.0" prefHeight="35.0" prefWidth="183.0" text="Withdraw Money">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" layoutY="435.0" text="Account Number:" />
+            <Label layoutX="454.0" layoutY="435.0" text="Amount($):" />
+            <TextField fx:id="admin4_acc_nb2" layoutX="67.0" layoutY="466.0" />
+            <TextField fx:id="admin4_amount2" layoutX="454.0" layoutY="466.0" />
+            <Label fx:id="admin4_err_msg2" layoutX="23.0" layoutY="603.0" prefHeight="18.0" prefWidth="604.0" />
+            <Button layoutX="210.0" layoutY="550.0" mnemonicParsing="false" onAction="#onWithdrawClick" prefHeight="26.0" prefWidth="263.0" style="-fx-background-color: #53B052;" text="Withdraw" textFill="#f4f1f1" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

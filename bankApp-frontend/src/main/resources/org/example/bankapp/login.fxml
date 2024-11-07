@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bankapp.Login">
+   <children>
+      <SplitPane prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #3D70FF;">
+         <items>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <ImageView fitHeight="51.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@Images/logo.png" />
+                     </image>
+                  </ImageView>
+               </center>
+            </BorderPane>
+         </items>
+      </SplitPane>
+      <BorderPane layoutX="200.0" layoutY="-2.0" prefHeight="400.0" prefWidth="400.0">
+         <center>
+            <VBox alignment="CENTER" fillWidth="false" prefHeight="271.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Login">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" right="190.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="ACCOUNT TYPE" textFill="#817d7d">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets right="160.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ChoiceBox fx:id="loginChoice" prefHeight="26.0" prefWidth="89.0" style="-fx-background-color: #a3bef0;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="20.0" right="140.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <Label text="USERNAME" textFill="#636060">
+                     <VBox.margin>
+                        <Insets bottom="5.0" right="170.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtLoginUsername" prefHeight="26.0" prefWidth="226.0" />
+                  <Label text="PASSWORD" textFill="#696666">
+                     <VBox.margin>
+                        <Insets bottom="5.0" right="170.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="txtLoginPassword" prefHeight="26.0" prefWidth="224.0" />
+                  <Label fx:id="lblLoginMessage" prefHeight="18.0" prefWidth="226.0" textFill="#f20404">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#onLoginClick" prefHeight="26.0" prefWidth="222.0" style="-fx-background-color: #3D70FF; -fx-background-radius: 7;" text="Login" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
