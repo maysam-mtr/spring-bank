@@ -3,4 +3,12 @@ Spring Bank is a banking management application that is designed to help users d
 
 # Screenshots
 
-![Alt text](screenshotss/'Screenshot 2024-11-07 214934'.png)
+![Alt text](screenshotss/s1.png)
+![Alt text](screenshotss/s2.png)
+![Alt text](screenshotss/s3.png)
+![Alt text](screenshotss/s4.png)
+![Alt text](screenshotss/s5.png)
+![Alt text](screenshotss/s6.png)
+![Alt text](screenshotss/s7.png)
+![Alt text](screenshotss/s8.png)
+![Alt text](screenshotss/s9.png)
